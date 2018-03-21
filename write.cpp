@@ -1,9 +1,5 @@
 // g++ write.cpp -o write
-#include <iostream>
-#include <cstdio>
-#include <string>
-#include <ctime>
-
+#include "sdk.h"
 void writefile(){
     int a[10000];
     std::string fileback=".dat",  filefront="./data/";

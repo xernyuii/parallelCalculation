@@ -1,0 +1,6 @@
+/data/*
+/temp/*
+*.out
+*.o
+.DS_Store
+.vscode/*

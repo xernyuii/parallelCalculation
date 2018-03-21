@@ -1,8 +1,5 @@
 //g++ merge.cpp -ltbb -o merge
-#include <iostream>
-#include <cstdio>
-#include <ctime>
-#include <tbb/tbb.h>
+#include "sdk.h"
 
 void merge(int* a, int low, int mid, int high){
     int i=low;

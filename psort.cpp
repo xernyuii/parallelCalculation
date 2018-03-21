@@ -1,14 +1,7 @@
 //g++ psort.cpp -ltbb -o psort
-#include <iostream>
-#include <cstdio>
-#include <string>
-#include <tbb/tbb.h>
-#include "presort.cpp"
+#include "psort.h"
+int temp = FILENUM+1;
 
-std::string fileback =".dat",  filefront ="./data/";
-
-int temp = 20;
-const int BUFFSIZE = 10000;
 int psort(int f_A, int f_B){
     int outnum=temp++;
     std::string outfile = "./data/" + std::to_string(outnum) + ".dat";
@@ -87,21 +80,6 @@ int psort(int f_A, int f_B){
     system(("rm "+ filenameB).c_str());
     return outnum;
 }
-int pmerge(int l, int r);
-class pmfile{
-    int *file1;
-    int *file2;
-    int l,r,mid;
-public:
-    pmfile(int *_file1, int *_file2, int _l, int _r, int _mid){
-        file1=_file1;file2=_file2;
-        l=_l;r=_r;mid=_mid;
-        }
-    void operator()(const tbb::blocked_range<int> &R) const{
-        if (R.begin()==0) *file1 = pmerge(l, mid);
-        else *file2 = pmerge(mid+1, r);
-    }
-};
 
 int pmerge(int l, int r){
     if(l == r) {

@@ -1,13 +1,12 @@
 //g++ read.cpp -o read
-#include <iostream>
-#include <cstdio>
-
+#include "sdk.h"
+extern const int FILESIZE;
 void pread(){
-    int a[10000];
+    int a[FILESIZE];
     std::string fileback=".dat",  filefront="./data/";
-    std::string filename = filefront + std::to_string(34) + fileback;
+    std::string filename = filefront + std::to_string(31) + fileback;
     FILE *fin=fopen(filename.c_str(),"rb");
-    fread(a, sizeof(int), 10000, fin);
+    fread(a, sizeof(int), FILESIZE, fin);
     fclose(fin);
     for(int i=0;i<100;i++){
         std::cout<<a[i]<<" ";
