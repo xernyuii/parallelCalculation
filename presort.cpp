@@ -8,6 +8,7 @@ public:
     void operator()(const tbb::blocked_range<int> &r) const{
         int a[BUFFSIZE];
         std::string fileback=".dat",  filefront="./data/";
+        
         for(int i=r.begin();i!=r.end();i++){
             std::string filename = filefront + std::to_string(i) + fileback;
             FILE *fin=fopen(filename.c_str(),"rb+");

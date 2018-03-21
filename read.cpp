@@ -4,7 +4,7 @@ extern const int FILESIZE;
 void pread(){
     int a[FILESIZE];
     std::string fileback=".dat",  filefront="./data/";
-    std::string filename = filefront + std::to_string(31) + fileback;
+    std::string filename = filefront + std::to_string(2*FILENUM-1) + fileback;
     FILE *fin=fopen(filename.c_str(),"rb");
     fread(a, sizeof(int), FILESIZE, fin);
     fclose(fin);

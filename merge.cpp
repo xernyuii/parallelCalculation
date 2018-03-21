@@ -6,6 +6,7 @@ void merge(int* a, int low, int mid, int high){
     int j=mid+1;
     int size=0; //temp的下标
     int *temp = new int [high - low +1]; //创建临时空间
+
     while((i <= mid) && (j <= high)){
         if(a[i] < a[j]){
             temp[size] = a[i++];
@@ -15,12 +16,15 @@ void merge(int* a, int low, int mid, int high){
         }
         size++;
     }
+
     while(i <= mid){
         temp[size++] = a[i++];
     }
+
     for(int i=0; i < size; i++){
         a[low + i] = temp[i];
     }
+    
     delete [] temp;
 }
 int dx=10;

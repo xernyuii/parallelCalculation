@@ -7,6 +7,6 @@
 static std::string fileback =".dat";
 static std::string filefront ="./data/";
 
-extern const int BUFFSIZE = 10000;
-extern const int FILENUM = 16;
-extern const int FILESIZE = 10000;
+extern const int BUFFSIZE = 1000000;
+extern const int FILENUM = 1000;
+extern const int FILESIZE = 1000000;

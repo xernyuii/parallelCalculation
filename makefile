@@ -1,5 +1,5 @@
 CXX = g++
-CXXFLAGS = -std=c++11 -static -O3
+CXXFLAGS = -std=c++11 -O3
 LIBS = -ltbb
 SRC = psort.cpp
 WRITESRC = write.cpp
@@ -15,7 +15,7 @@ clean:
 	-rm -f  $(TARGET) $(WRITETAR) $(READTAR) $(DATA)
 
 $(TARGET): $(SRC)
-	$(CXX) $(SRC) $(LIBS) -o $(TARGET)
+	$(CXX) $(CXXFLAGS) $(SRC) $(LIBS) -o $(TARGET)
 
 $(WRITETAR): $(WRITESRC)
 	$(CXX) $(WRITESRC) $(LIBS) -o $(WRITETAR)
